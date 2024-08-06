@@ -5,6 +5,16 @@
     </head>
     <body>
         <?php
+        $panel = isset($_POST['showPanel']);
+        ?>
+        <form method="post">
+            <h1>Admin Panel</h1>
+            <input type="text" id="key" name="key" required placeholder="Password">
+            <button type="submit" name='showPanel'>Check Password</button>
+        </form>
+        <?php
+        if ($panel):
+        
         // get the decryption key from the form
         if (isset($_POST['key'])) {
             $encryptionKey = trim($_POST['key']);
@@ -33,6 +43,7 @@
         <h1>panel</h1>
         <?php else: ?>
         <p>Access Denied</p>
+        <?php endif; ?>
         <?php endif; ?>
     </body>
 </html>
