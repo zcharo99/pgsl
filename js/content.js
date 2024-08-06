@@ -42,6 +42,7 @@ export async function fetchEditors() {
         const editors = await editorsResults.json();
         return editors;
     } catch {
+        console.error('Failed to load editors.');
         return null;
     }
 }
